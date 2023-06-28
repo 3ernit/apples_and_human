@@ -7,4 +7,4 @@ class Prop:
 
     def move(self, x_speed, y_speed):
         self.pos.x += int(x_speed)
-        self.pos.x += int(y_speed)
+        self.pos.y += int(y_speed)

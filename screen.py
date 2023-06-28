@@ -30,7 +30,7 @@ class Screen:
     def display_prop(self, x, y, prop=0):
         # 0 - void; 1 - apple; 2 - human
         split_1 = self.screen_arr[y][0:x]
-        split_2 = self.screen_arr[y][x:len(self.screen_arr[y])-1]
+        split_2 = self.screen_arr[y][x+1:len(self.screen_arr[y])]
         self.screen_arr[y] = split_1
         match prop:
             case 0:
@@ -40,3 +40,11 @@ class Screen:
             case 2:
                 self.screen_arr[y] += self.human_symbol[0]
         self.screen_arr[y] += split_2
+
+    def get_str(self):
+        result = ""
+        for i in range(len(self.screen_arr)):
+            result += self.screen_arr[i]
+            if i < len(self.screen_arr) - 1:
+                result += "\n"
+        return result
