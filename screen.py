@@ -11,11 +11,7 @@ class Screen:
         self.human_symbol = str(human_symbol)
 
         self.screen_arr = []
-        screen_line = ""
-        for i in range(self.width):
-            screen_line += self.void_symbol[0]
-        for i in range(self.height):
-            self.screen_arr.append(screen_line)
+        self.clear()
 
     def get_max_apples(self):
         return self.width*self.height-1
